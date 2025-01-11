@@ -1,0 +1,25 @@
+class Auto:
+  
+  # constructor: inicializa los atributos del objeto
+  # self: objeto actual
+  def __init__(self, ruedas=4):
+    # atributos del objeto
+    # prefijo __ significa private
+    self.__ruedas = ruedas
+    self.__enmarcha = False
+
+  # métodos
+  def arrancar(self):
+    self.__enmarcha = True
+  
+  def get_estado(self):
+    if self.__enmarcha:
+      return 'En marcha'
+    else:
+      return 'Parado'
+  
+auto = Auto()
+print(auto.get_estado())
+auto.arrancar()
+auto.__enmarcha = False    # no hay error, tampoco modifica porque está encapsulado
+print(auto.get_estado())
